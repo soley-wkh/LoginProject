@@ -1,0 +1,38 @@
+.content {
+    text-align: center;
+}
+
+.label {
+    color: white;
+    font-size: 40px;
+    font-family: 楷体;
+}
+
+.register_form {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    color: white;
+}
+
+.register_form label {
+    font-size: 32px;
+    font-family: 楷体;
+}
+
+.register_form input {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.submit {
+    margin-left: 80px;
+    width: 350px;
+    font-family: 楷体;
+}
+
+.message {
+    color: white;
+    font-size: 16px;
+    font-family: 新宋体;
+}

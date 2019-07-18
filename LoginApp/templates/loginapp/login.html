@@ -1,0 +1,24 @@
+{% extends 'loginapp/base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/loginapp/css/register.css">
+{% endblock %}
+
+{% block content %}
+    <p class="label">登录</p>
+    <form action="" class="register_form" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="">账号:</label>
+            <input type="text" name="username">
+        </p>
+        <p>
+            <label for="">密码:</label>
+            <input type="password" name="password">
+        </p>
+        <p>
+            <input class="submit" type="submit" value="登录">
+        </p>
+        <p class="message">{{ result.content}}</p>
+    </form>
+{% endblock %}

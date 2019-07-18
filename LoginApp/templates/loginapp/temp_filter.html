@@ -1,0 +1,10 @@
+{% extends 'loginapp/base.html' %}
+{% load my_filters %}
+{% block content %}
+    {% for data in test_data %}
+        <p style="color: white">{{ data.name }}&nbsp;:&nbsp;&nbsp;{{ data.birthday |convert_time|replace_character:"0,零" }}&nbsp;:&nbsp;&nbsp;{{ data.birthday |convert_time|age }}</p>
+
+    {% endfor %}
+    <p style="color: white">{% addNum '3' %}</p>
+
+{% endblock %}

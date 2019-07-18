@@ -1,0 +1,52 @@
+{% extends 'loginapp/base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/loginapp/css/register.css">
+    <script src="/static/loginapp/js/jquery.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <p class="label">注册</p>
+    <form action="" class="register_form" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="">账号:</label>
+            <input type="text" name="username" id="id_username">
+        </p>
+        <p>
+            <label for="">密码:</label>
+            <input type="password" name="password">
+        </p>
+        <p>
+            <input id="submit" class="submit" type="submit" value="注册">
+        </p>
+        <p id="message" class="message">{{ result.content }}</p>
+    </form>
+    <script>
+        $("#id_username").blur(
+            function () {
+                var value = $("#id_username").val();
+                var url = "/au/?username=" + value;
+                $.ajax(
+                    {
+                        url: url,
+                        type: 'get',
+                        data: "",
+                        success: function (data) {
+                            $("#message").text(data.content);
+                            if (data.status == "error") {
+                                $("#submit").attr("disabled", true)
+                            } else {
+                                $("#submit").attr("disabled", false)
+                            }
+
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    }
+                )
+            }
+        )
+    </script>
+{% endblock %}

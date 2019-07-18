@@ -1,0 +1,13 @@
+{% extends "loginapp/base.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/loginapp/css/index.css">
+{% endblock %}
+
+{% block content %}
+    <p>
+        index|首页
+    </p>
+    <span style="font-size:24px;color: white;">欢迎你啊：{{ request.COOKIES.username}}</span>
+    <span style="font-size:24px;background-color: white;"><a href="/login/logout/">退出</a></span>
+{% endblock %}
